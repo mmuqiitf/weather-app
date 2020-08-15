@@ -9,7 +9,8 @@ const forecast = (latitude, longitude, callback) => {
             callback('Location didn\'t exist! Try another search', undefined)
         }
         else{
-            callback(undefined, 'It is currently ' + response.body.current.temperature + ' degress out. There is a ' + response.body.current.precip + '% chances of rain')
+            console.log(response.body)
+            callback(undefined, 'It is currently ' + response.body.current.temperature + ' degress out. There is a ' + response.body.current.precip + '% chances of rain. ' + response.body.current.weather_descriptions + '. The wind speed is ' + response.body.current.wind_speed + ' and the pressure is ' + response.body.current.pressure)
         }
     })
 }
